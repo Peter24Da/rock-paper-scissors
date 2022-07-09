@@ -1,0 +1,58 @@
+<script>
+
+    function computerPlay(){
+        function randNum(min ,max){                             //random 
+      return Math.floor(Math.random() * (max - min + 1) + min)  //number generator
+    }
+    const oneToThree = randNum(1,3);
+    return result = (oneToThree === 1)? 'Rock': 
+                    (oneToThree === 2)? 'Paper':
+                    (oneToThree === 3)? 'Scissors': "error"
+    };
+
+    let computerSelection = computerPlay()
+    let playerSelection = ""
+
+    function play(player){
+        computerPlay
+       let players = player.toLowerCase();
+        switch (players) {
+            case 'rock':
+                switch (computerSelection) {
+                    case 'Rock':
+                        return "Draw! Rock doesn't beat Rock";
+                        break;
+                    case 'Paper':
+                        return "You Lose! Paper beats Rock";
+                        break;
+                    case 'Scissors':
+                        return "You Win! Rock beats Scissors";
+                }
+                break;
+            case 'paper':
+                switch (computerSelection) {
+                    case 'Rock':
+                        return "You Win! Paper beats Rock";
+                        break;
+                    case 'Paper':
+                        return "Draw! Paper doesn't beats Paper";
+                        break;
+                    case 'Scissors':
+                        return "You Lose! Scissors beats Paper";
+                }
+                break;
+            case 'scissors':
+                switch (computerSelection) {
+                    case 'Rock':
+                        return "You Lose! Rock beats Scissors";
+                        break;
+                    case 'Paper':
+                        return "You Win! Scissors beats Paper";
+                        break;
+                    case 'Scissors':
+                        return "Draw! Scissors doesn't beats Scissors";
+                }
+        }
+    }
+
+</script>
