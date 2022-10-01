@@ -1,4 +1,12 @@
+const buttons = document.querySelectorAll('button');
 
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.className;
+        console.log(playerSelection);
+        play();
+    })
+});
 
 function computerPlay(){
         function randNum(min ,max){                             
@@ -10,76 +18,52 @@ function computerPlay(){
                     (oneToThree === 3)? 'Scissors': "error";
     };
 
-    let computerSelection
-    let playerSelection
-    let win = 0;
-    let lose = 0;
+    let computerSelection ;
+    let playerSelection ;
+    let playerScore = 0;
+    let computerScore = 0;
 
-    function play(player ){
-     let i=0;  //error if input isn't rock paper scissors
-      do {
-        playerSelection = player = prompt("Rock Paper Scissors", " ");
+    function play(){
+
         computerPlay();
         computerSelection = computerPlay()
 
-       let playerSelect = player.toLowerCase();
-        switch (playerSelect) {
+        switch (playerSelection) {
             case 'rock':
                 switch (computerSelection) {
                     case 'Rock':
                         return alert ("Draw! Rock doesn't beat Rock");
                         break;
                     case 'Paper':
-                        return [lose++, alert ("You Lose! Paper beats Rock")];
+                        return [computerScore++, alert ("You Lose! Paper beats Rock")];
                         break;
                     case 'Scissors':
-                        return [win++ ,alert ("You Win! Rock beats Scissors")];
+                        return [playerScore++ ,alert ("You Win! Rock beats Scissors")];
                 }
                 break;
             case 'paper':
                 switch (computerSelection) {
                     case 'Rock':
-                        return [win++ ,alert ("You Win! Paper beats Rock")];
+                        return [playerScore++ ,alert ("You Win! Paper beats Rock")];
                         break;
                     case 'Paper':
                         return alert ("Draw! Paper doesn't beats Paper");
                         break;
                     case 'Scissors':
-                        return [lose++, alert ("You Lose! Scissors beats Paper")];
+                        return [computerScore++, alert ("You Lose! Scissors beats Paper")];
                 }
                 break;
             case 'scissors':
                 switch (computerSelection) {
                     case 'Rock':
-                        return [lose++, alert ("You Lose! Rock beats Scissors")];
+                        return [computerScore++, alert ("You Lose! Rock beats Scissors")];
                         break;
                     case 'Paper':
-                        return [win++ ,alert ("You Win! Scissors beats Paper")];
+                        return [playerScore++ ,alert ("You Win! Scissors beats Paper")];
                         break;
                     case 'Scissors':
                         return alert ("Draw! Scissors doesn't beats Scissors");
                 }
                 break;
             default:
-                alert ("Error: You Should input Rock, Paper or Scissors!");
-                let i=1
-        }
-    } while (i=1)
-    }
-
-
-    
-
-    function game(){
-    
-        for (let turn=0; turn<5; turn++) {
-            play()
-        }
-
-        (win > lose)? alert("YOU WIN!!!!") : 
-        (lose > win)? alert("COMPUTER WINS!!!") :
-        alert ("DRAW!!!")
-    }
-
-    game()
-
+        }}
