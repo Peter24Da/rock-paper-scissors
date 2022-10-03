@@ -5,6 +5,7 @@ buttons.forEach((button) => {
         playerSelection = button.className;
         console.log(playerSelection);
         play();
+        score();
     })
 });
 
@@ -15,7 +16,7 @@ function computerPlay(){
     const oneToThree = randNum(1,3);
     return result = (oneToThree === 1)? 'Rock': 
                     (oneToThree === 2)? 'Paper':
-                    (oneToThree === 3)? 'Scissors': "error";
+                    (oneToThree === 3)? 'Scissors': "";
     };
 
     let computerSelection ;
@@ -67,3 +68,23 @@ function computerPlay(){
                 break;
             default:
         }}
+
+    function score() {
+        let player = document.querySelector('#player');
+        let computer = document.querySelector('#computer');
+
+        player.textContent = `${playerScore}`;
+        computer.textContent = `${computerScore}`;
+
+        if (playerScore === 5) {
+            alert('You Win');
+            playerScore = 0;
+            computerScore = 0;
+        };
+
+        if (computerScore === 5) {
+            alert('You Lose');
+            playerScore = 0;
+            computerScore = 0;
+        };
+    }

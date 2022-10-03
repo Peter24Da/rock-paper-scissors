@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scrissors</title>
+    <title>Rock Paper Scissors</title>
+    <script src="rps.js" defer></script>
 </head>
 <body>
-    <script src="rps.js"></script>  
-    
+    <h1>Rock Paper Scissors</h1>
+    <div class="buttons">
+        <button class="rock">rock</button>
+        <button class="paper">paper</button>
+        <button class="scissors">scissors</button>
+    </div>
+    <div class="match">
+        <div id="pchoice"></div>
+        <div id="cchoice"></div>
+    </div>
+    <div>Player Score:<span id="player"></span></div>
+    <div>Computer Score:<span id="computer"></span></div>
 </body>
 </html>
